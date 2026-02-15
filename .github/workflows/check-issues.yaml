@@ -1,0 +1,13 @@
+name: Capture issues
+on: 
+  issues:
+    types:
+      [opened, edited]
+jobs:
+  output_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print issue details
+        run: |
+          echo "Issue title: ${{github.event.issue.title}}"
+          echo "Issue details: ${{github.event.issue.body}}"
